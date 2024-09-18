@@ -1,0 +1,67 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("|--------JOGO MEGA-SENA--------|\n"); // Imprime o título do programa
+		int dezena; // Variável para armazenar a quantidade de dezenas
+		Random random = new Random(); // Para gerar números aleatórios
+
+		decimal premio;
+		do
+		{
+			Console.WriteLine("Qual será o valor do prêmio?\n"); // Solicita o valor do prêmio
+			if (!decimal.TryParse(Console.ReadLine(), out premio)) // Tenta converter a entrada em decimal
+			{
+				Console.WriteLine("\nPor favor, insira um número válido."); // Mensagem de erro para entrada inválida
+			}
+		} while (premio <= 0); // Continua solicitando enquanto a entrada não for válida
+
+		int bolao;
+		do
+		{
+			Console.WriteLine("Informe a quantidade de bolões:"); // Solicita a quantidade de bolões
+			if (!int.TryParse(Console.ReadLine(), out bolao)) // Tenta converter a entrada em int
+			{
+				Console.WriteLine("\nPor favor, insira um número válido."); // Mensagem de erro para entrada inválida
+			}
+		} while (bolao <= 0); // Continua solicitando enquanto a entrada não for válida
+
+		do
+		{
+			Console.WriteLine("\nInforme a quantidade de dezenas:"); // Solicita a quantidade de dezenas
+			if (int.TryParse(Console.ReadLine(), out dezena) && dezena >= 6 && dezena <= 15) // Verifica se a entrada é válida
+			{
+				for (int cont = 0; cont < bolao; cont++) // Executa para cada bolão
+				{
+					Console.WriteLine($"\n\nBolão {cont + 1}"); // Imprime o número do bolão
+					for (int contador = 1; contador <= dezena; contador++) // Gera as dezenas
+					{
+						int num = random.Next(1, 61); // Gera um número aleatório entre 1 e 60
+						if (contador == dezena)
+						{
+							Console.Write($"{num:D2}"); // Imprime o último número sem hífen
+						}
+						else
+						{
+							Console.Write($"{num:D2}-"); // Imprime o número seguido de hífen
+						}
+					}
+				}
+
+				decimal resultado1 = premio * 0.75m; // Cálculo para quem acertar 6 dezenas
+				decimal resultado2 = premio * 0.15m; // Cálculo para quem acertar 5 dezenas
+				decimal resultado3 = premio * 0.1m; // Cálculo para quem acertar 4 dezenas
+				
+				Console.WriteLine($"\n\nSe alguém acertou um total de 6 dezenas, receberá um valor de: {resultado1}.\n");
+				Console.WriteLine($"\nSe alguém acertou um total de 5 dezenas, receberá um valor de: {resultado2}.\n");
+				Console.WriteLine($"\nSe alguém acertou um total de 4 dezenas, receberá um valor de: {resultado3}.\n");
+			}
+			else
+			{
+				Console.WriteLine("\nPor favor, insira um número entre 6 e 15."); // Mensagem de erro se a entrada for inválida
+			}
+		} while (dezena < 6 || dezena > 15); // Repete enquanto o valor não for entre 6 e 15
+	}
+}

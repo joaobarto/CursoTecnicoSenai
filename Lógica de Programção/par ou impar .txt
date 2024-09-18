@@ -1,0 +1,26 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+		Console.WriteLine("Qual é o número?");
+		
+		if (double.TryParse(Console.ReadLine(), out double numero))
+		{
+			if (numero % 2 == 0)
+			{
+				Console.WriteLine($"\nO número {numero} é par.");
+			}
+			else 
+			{
+				Console.WriteLine($"\nO número {numero} é impar.");
+			}
+		}
+		else 
+		{
+			Console.WriteLine($"\nO que foi digitado não é um número. Por favor insira um número");
+		}
+	}
+}

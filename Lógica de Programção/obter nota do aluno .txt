@@ -1,0 +1,24 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Informe a nota: ");
+		String texto = Console.ReadLine();
+		int nota = int.Parse(texto);
+		
+		if (nota >=10)
+		{
+		Console.WriteLine("Aprovado");
+		}
+		else if (nota >= 5)
+		{
+		Console.WriteLine("Recuperação");
+		}
+		else
+		{
+		Console.WriteLine("Reprovado");
+		}
+	}
+}

@@ -1,0 +1,38 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Double nota1, nota2, nota3, nota4, media;
+		
+		Console.WriteLine("Insira o primeiro número:");
+		nota1 = Convert.ToDouble(Console.ReadLine());
+		
+		Console.WriteLine("Insira o segundo número:");
+		nota2 = Convert.ToDouble(Console.ReadLine());
+		
+		Console.WriteLine("Insira o terceiro número:");
+		nota3 = Convert.ToDouble(Console.ReadLine());
+		
+		Console.WriteLine("Insira o quarto número:");
+		nota4 = Convert.ToDouble(Console.ReadLine());
+		
+		media = (nota1 + nota2 + nota3 + nota4)/4;
+		
+		Console.Clear();
+		
+		if (media >= 60)
+		{
+		Console.WriteLine("Aprovado");
+		}
+		else if (media >= 40)
+		{
+		Console.WriteLine("Recuperação");
+		}
+		else
+		{
+		Console.WriteLine("Reprovado");
+		}
+	}
+}

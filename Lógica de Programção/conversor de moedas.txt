@@ -1,0 +1,48 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		double resultado;
+		Console.WriteLine("Qual o valor que você deseja transformar?\n");
+		if (double.TryParse(Console.ReadLine(), out double valor))
+		{
+			Console.WriteLine("\nQual é a moeda que você deseja?\n");
+				Console.WriteLine("1) Dolar\n");
+				Console.WriteLine("2) Libra\n");
+				Console.WriteLine("3) Euro\n");
+				if (int.TryParse(Console.ReadLine(), out int escolha))
+					{
+					switch (escolha)
+						{
+						case 1:
+							resultado = valor / 5.48;
+							Console.Clear();
+							Console.WriteLine("O resultado é de:"+ Math.Round(resultado,2));
+							break;
+						case 2:
+							resultado = valor / 7.13;
+							Console.WriteLine("O resultado é de:"+ Math.Round(resultado,2));
+							break;
+						case 3:
+							resultado = valor / 6.08;
+							Console.WriteLine("O resultado é de:"+ Math.Round(resultado,2));
+							break;
+							default:
+								Console.WriteLine("Opção inválida!");
+								break;
+						}
+					}
+					else 
+					{
+					Console.WriteLine("\nNúmero inválido!");
+					}
+					
+			}	
+			else 
+			{
+			Console.WriteLine("\nNúmero inválido!");
+			}
+	}
+}

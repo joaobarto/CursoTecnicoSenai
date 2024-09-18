@@ -1,0 +1,35 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Informe a idade da pessoa:");
+		
+		
+		if (int.TryParse(Console.ReadLine(), out int idade))
+		{
+			if (idade >= 0 && idade < 13)
+			{
+			Console.WriteLine("\nA pessoa é um criança.");
+			}
+			else if (idade >= 13 && idade < 18)
+			{
+			Console.WriteLine("\nA pessoa é um adolescente.");
+			}
+			else if (idade >= 18 && idade < 65)
+			{
+			Console.WriteLine("\nA pessoa é um adulto.");
+			}
+			else
+			{
+			Console.WriteLine("\nA pessoa é uma idoso.");
+			}
+		}
+		else 
+		{
+		Console.WriteLine("\nO que foi digitado não é um número. Por favor insira um número.");
+		}
+		
+	}
+}

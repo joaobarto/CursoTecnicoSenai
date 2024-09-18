@@ -1,0 +1,28 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		double resultado;
+		Console.WriteLine("Informe um número que você quer ver a sua tabuada:\n");
+		if (double.TryParse(Console.ReadLine(), out double num))
+		{
+			Console.WriteLine("Até que número você deseja ver?\n");
+			if (double.TryParse(Console.ReadLine(), out double tabuada))
+			{
+				double contador = 0;
+				for (contador = 0; contador <= tabuada;)
+				{
+					resultado = num * tabuada;
+					Console.WriteLine($"{num} x {tabuada} = {resultado}");
+					tabuada = tabuada - 1;
+				}			
+			}
+		}
+		else 
+		{
+		Console.WriteLine("\nNúmero inválido!");
+		}	
+	}
+}

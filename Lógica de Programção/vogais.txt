@@ -1,0 +1,45 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		bool continuar, vogal = false;
+		char[] letras = new char[5];
+		int[] array = new int[5];
+		char[] vogais =
+		{
+			'a',
+			'e',
+			'i',
+			'o',
+			'u'
+		};
+		do
+		{
+			Console.WriteLine("Informe a letra:");
+			char letra = Console.ReadLine().ToLower()[0];
+			foreach (char i in vogais)
+			{
+				if (letra == i)
+				{
+					vogal = true;
+					break;
+				}
+			}
+
+			if (vogal)
+			{
+				Console.WriteLine($"A letra {letra} é uma vogal.");
+			}
+			else
+			{
+				Console.WriteLine($"A letra {letra} é uma consoante.");
+			}
+
+			Console.WriteLine("\nDeseja continuar? (1-sim | 2-não)");
+			continuar = Console.ReadLine() == "1";
+		}
+		while (continuar);
+	}
+}

@@ -1,0 +1,33 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		double resultado;
+		Console.WriteLine("Digite a distancia em metros:");
+		double metros = double.Parse(Console.ReadLine());
+		Console.WriteLine("\nEscolha a uniade de conversão (cm, km, mi): ");
+		string unidade = Console.ReadLine().ToLower();
+		switch (unidade)
+		{
+			case "cm":
+				resultado = metros * 100;
+				unidade = "centimetros";
+				break;
+			case "km":
+				resultado = metros / 1000;
+				unidade = "quilometros";
+				break;
+			case "mi":
+				resultado = metros / 1852;
+				unidade = "milhas";
+				break;
+			default:
+				Console.WriteLine("Unidade Invalida");
+				return;
+		}
+
+		Console.WriteLine($"\nResultado: {resultado} {unidade}");
+	}
+}

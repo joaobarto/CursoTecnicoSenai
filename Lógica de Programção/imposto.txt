@@ -1,0 +1,35 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		decimal imposto;
+		Console.WriteLine("Informe o salario bruto:");
+		
+		
+		if (decimal.TryParse(Console.ReadLine(), out decimal salario))
+		{
+			if (salario <= 3000)
+			{
+			imposto = salario*0.1m;
+			Console.WriteLine("\nO preço que deverá ser pago será de: R$"+imposto);
+			}
+			else if (salario <= 6000)
+			{
+			imposto = salario*0.15m;
+			Console.WriteLine("\nO preço que deverá ser pago será de: R$"+imposto);
+			}
+			else 
+			{
+			imposto = salario*0.2m;
+			Console.WriteLine("\nO preço que deverá ser pago será de: R$"+imposto);
+			}
+		}
+		else 
+		{
+		Console.WriteLine($"\nO que foi digitado não é um número. Por favor insira um número.");
+		}
+		
+	}
+}

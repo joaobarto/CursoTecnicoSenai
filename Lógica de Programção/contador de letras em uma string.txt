@@ -1,0 +1,23 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		int contador = 0;
+
+		Console.WriteLine("Insita o texto:");
+		string texto = Console.ReadLine().ToLower();
+		Console.WriteLine("\nQual o caractere que você deseja contar?");
+		char caractere = Console.ReadLine()[0];
+		foreach (char i in texto)
+		{
+			if(i == caractere)
+			{
+				contador++;
+			}
+		}
+		Console.WriteLine($"O número do caractere ({caractere}), é igual a: {contador}.");
+
+	}
+} 			

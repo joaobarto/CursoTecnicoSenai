@@ -1,0 +1,66 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        bool boiaA, boiaB, boiaC, continuar;
+		
+		do
+		{
+            Console.WriteLine("A boia A está cheia? (0 para não, 1 para sim)");
+            boiaA = Console.ReadLine() == "1";
+            Console.WriteLine("\nA boia B está cheia? (0 para não, 1 para sim)");
+            boiaB = Console.ReadLine() == "1";
+            Console.WriteLine("\nA boia C está cheia? (0 para não, 1 para sim)");
+            boiaC = Console.ReadLine() == "1";
+
+            if (!boiaA && !boiaB && !boiaC)
+            {
+                Console.WriteLine("\nLigue a válvula.");
+                Console.WriteLine("\nNão ligue a bomba.");
+            }
+            else if (!boiaA && !boiaB && boiaC)
+            {
+                Console.WriteLine("\nLigue a válvula.");
+                Console.WriteLine("\nNão ligue a bomba.");
+            }
+            else if (!boiaA && boiaB && !boiaC)
+            {
+                Console.WriteLine("\nErro, tente novamente");
+            }
+            else if (!boiaA && boiaB && boiaC)
+            {
+                Console.WriteLine("\nErro, tente novamente");
+            }
+            else if (boiaA && !boiaB && !boiaC)
+            {
+                Console.WriteLine("\nLigue a válvula.");
+                Console.WriteLine("\nLigue a bomba.");
+            }
+            else if (boiaA && !boiaB && boiaC)
+            {
+                Console.WriteLine("\nLigue a válvula.");
+                Console.WriteLine("\nNão ligue a bomba.");
+            }
+            else if (boiaA && boiaB && !boiaC)
+            {
+                Console.WriteLine("\nNão ligue a válvula.");
+                Console.WriteLine("\nLigue a bomba.");
+            }
+			else if (!boiaA && !boiaB && boiaC)
+            {
+                Console.WriteLine("\nNão ligue a válvula.");
+                Console.WriteLine("\nLigue a bomba.");
+            }
+
+            else
+            {
+                Console.WriteLine("\nDesligue a válvula.");
+                Console.WriteLine("\nNão ligue a bomba.");
+            }
+			Console.WriteLine("\nDeseja continuar?");
+			continuar = Console.ReadLine() == "1";
+		}while(continuar);
+    }
+}
