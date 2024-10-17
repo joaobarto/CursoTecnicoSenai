@@ -3,8 +3,8 @@
 ## 1. Informações do Projeto
 - **Nome do Projeto:** Cidades Brasileiras
 - **Descrição:** Um site apresentando as três cidades mais lindas do Brasil com imagens e descrições.
-- **Data de Início:** 2024-10-01
-- **Data de Conclusão:** 2024-10-15
+- **Data de Início:** 2024-10-16
+- **Data de Conclusão:** 2024-10-17
 
 ## 2. Configuração do Ambiente
 - **Tecnologias Utilizadas:**
